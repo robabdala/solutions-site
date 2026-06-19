@@ -3,281 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>That One Guy Solutions | Your Trusted Referral Network</title>
+    <title>That 1 Guy Solutions</title>
+    
     <style>
-        /* Color Palette & Base Styles */
-        :root {
-            --primary: #1e3a8a; /* Deep Trust Blue */
-            --secondary: #3b82f6; /* Modern Bright Blue */
-            --dark: #1f2937; /* Dark Charcoal */
-            --light: #f9fafb; /* Off-White */
-            --white: #ffffff;
-        }
-        
-        * {
-            box-sizing: border-box;
+        /* Base page styling to match your dark logo texture theme */
+        body {
+            background-color: #121212; /* Dark matte charcoal background */
+            color: #e0e0e0;            /* Soft silver/white text for readability */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
+        /* Styles the header container box */
+        .site-header {
+            background-color: #1a1a1a;   /* Slightly lighter dark grey for contrast */
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 4px solid #c21807; /* Metallic crimson red border line matching your logo font */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adds a premium depth shadow below header */
         }
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
+        /* Controls the size and constraints of your logo image */
+        .header-logo {
+            max-height: 140px; /* Restricts height so it stays crisp and doesn't overwhelm screens */
+            width: auto;       /* Maintains perfect aspect ratio proportions */
+            display: inline-block;
+        }
+
+        /* Styles the main content layout area */
+        .main-content {
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Header & Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--secondary);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
-            color: var(--white);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #2563eb;
-            transform: translateY(-2px);
-        }
-
-        /* Services / Referral Section */
-        .services {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: var(--primary);
-            margin-bottom: 50px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1xl));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 5px solid var(--secondary);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .card h3 {
-            font-size: 22px;
+        /* Premium red headline styling */
+        h1 {
+            color: #d32f2f; /* Deep vibrant red matching "Solutions" */
+            font-size: 2.5rem;
             margin-bottom: 15px;
-            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background-color: var(--light);
-            text-align: center;
-        }
-
-        .contact-info {
-            max-width: 600px;
-            margin: 30px auto 0 auto;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .contact-item {
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .contact-item strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .contact-item a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 22px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            text-align: center;
-            padding: 30px 0;
-            font-size: 14px;
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero h1 {
-                font-size: 32px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
+        /* Silver paragraph description styling */
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #b0bec5; /* Silver-grey tone matching the "THAT 1 GUY" text */
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="container">
-            <a href="#" class="logo">That One Guy <span>Solutions</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+    <!-- HEADER SECTION WITH YOUR EXACT FILENAME LOGO -->
+    <header class="site-header">
+        <img src="Logo.png.jpg" alt="That 1 Guy Solutions Logo" class="header-logo">
     </header>
 
-    <!-- Main Hero Banner -->
-    <section class="hero">
-        <div class="container">
-            <h1>All Your Needs In One Place</h1>
-            <p>Your Trusted Referral Network. We connect you directly with fully insured, top-tier local professionals for home cleanouts, landscaping, contracting, and more.</p>
-            <a href="tel:4849083149" class="btn">Call 484-908-3149</a>
-        </div>
-    </section>
-
-    <!-- Core Business Information -->
-    <section id="about" class="services">
-        <div class="container">
-            <h2 class="section-title">Why Choose Our Network?</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Fully Insured Partners</h3>
-                    <p>Every single service provider we work with is thoroughly vetted, licensed, and fully insured so your property is always protected.</p>
-                </div>
-                <div class="card">
-                    <h3>Garage & Junk Removal Specialist</h3>
-                    <p>Have a cluttered garage or residential junk pile? We specialize in quick, professional cleanouts that give you your space back instantly.</p>
-                </div>
-                <div class="card">
-                    <h3>Complete Referral Network</h3>
-                    <p>Stop wasting hours calling unverified vendors. From landscaping to plumbing and general contractors, we hand-off your job to verified experts.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Lead Details -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch Today</h2>
-            <p>Ready to solve your problem? Reach out directly via phone or email for immediate booking support.</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <strong>Direct Call or Text</strong>
-                    <a href="tel:4849083149">484-908-3149</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Email Address</strong>
-                    <a href="mailto:Rob@thatoneguysolutions.com" style="font-size: 18px;">Rob@thatoneguysolutions.com</a>
-                </div>
-                <div class="contact-item" style="margin-bottom: 0;">
-                    <strong>Official Web Domain</strong>
-                    <p style="font-size: 18px; font-weight: bold; color: var(--dark);">Thatoneguysolutions.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 That One Guy Solutions. All Rights Reserved. Fully Insured Network.</p>
-        </div>
-    </footer>
+    <!-- MAIN CONTENT SECTION -->
+    <main class="main-content">
+        <h1>Welcome to That 1 Guy Solutions</h1>
+        <p>Your custom business website content goes right here. You can edit this text anytime to describe your tailored services, project details, or company background!</p>
+    </main>
 
 </body>
 </html>
