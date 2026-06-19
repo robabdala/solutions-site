@@ -3,71 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>That 1 Guy Solutions</title>
-    
+    <title>That 1 Guy Solutions | Your Trusted Referral Network</title>
     <style>
-        /* Base page styling to match your dark logo texture theme */
-        body {
-            background-color: #121212; /* Dark matte charcoal background */
-            color: #e0e0e0;            /* Soft silver/white text for readability */
-            font-family: Arial, sans-serif;
+        /* Color Palette & Base Styles matching your Logo Theme */
+        :root {
+            --bg-dark: #121212;      /* Matte Charcoal Background */
+            --bg-card: #1a1a1a;      /* Slightly lighter grey for header/cards */
+            --accent-red: #c21807;   /* Metallic Crimson Red */
+            --accent-silver: #b0bec5;/* Silver-Grey for sub-text */
+            --text-light: #e0e0e0;   /* Bright silver/white text */
+            --white: #ffffff;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Styles the header container box */
-        .site-header {
-            background-color: #1a1a1a;   /* Slightly lighter dark grey for contrast */
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 4px solid #c21807; /* Metallic crimson red border line matching your logo font */
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adds a premium depth shadow below header */
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
-        /* Controls the size and constraints of your logo image */
-        .header-logo {
-            max-height: 140px; /* Restricts height so it stays crisp and doesn't overwhelm screens */
-            width: auto;       /* Maintains perfect aspect ratio proportions */
-            display: inline-block;
-        }
-
-        /* Styles the main content layout area */
-        .main-content {
-            padding: 50px 20px;
-            text-align: center;
-            max-width: 800px;
+        .container {
+            width: 90%;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        /* Premium red headline styling */
-        h1 {
-            color: #d32f2f; /* Deep vibrant red matching "Solutions" */
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+        /* Header & Navigation Area */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--accent-red);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        /* Controls the exact filename logo styling */
+        .header-logo {
+            max-height: 90px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-red);
+        }
+
+        /* Hero Layout Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .hero h1 {
+            color: var(--accent-red);
+            font-size: 38px;
+            margin-bottom: 20px;
+            line-height: 1.2;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Silver paragraph description styling */
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #b0bec5; /* Silver-grey tone matching the "THAT 1 GUY" text */
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: var(--accent-silver);
+        }
+
+        /* Red CTA Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(194, 24, 7, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #a01405;
+            transform: translateY(-2px);
+        }
+
+        /* Services & Features Area */
+        .services {
+            padding: 60px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            color: var(--white);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 5px solid var(--accent-red);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .card p {
+            color: var(--accent-silver);
+        }
+
+        /* Contact Details Area */
+        .contact {
+            padding: 60px 0;
+            background-color: #0d0d0d;
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--accent-silver);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 30px auto 0 auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            color: var(--accent-red);
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #080808;
+            color: var(--accent-silver);
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        /* Mobile Layout Adjustments */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER SECTION WITH YOUR EXACT FILENAME LOGO -->
-    <header class="site-header">
-        <img src="Logo.png.jpg" alt="That 1 Guy Solutions Logo" class="header-logo">
+    <!-- Header containing logo image and navigation -->
+    <header>
+        <div class="container">
+            <a href="#">
+                <img src="Logo.png.jpg" alt="That 1 Guy Solutions Logo" class="header-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- MAIN CONTENT SECTION -->
-    <main class="main-content">
-        <h1>Welcome to That 1 Guy Solutions</h1>
-        <p>Your custom business website content goes right here. You can edit this text anytime to describe your tailored services, project details, or company background!</p>
-    </main>
+    <!-- Hero Banner with Phone Call to Action -->
+    <section class="hero">
+        <div class="container">
+            <h1>All Your Needs In One Place</h1>
+            <p>Your Trusted Referral Network. We connect you directly with fully insured, top-tier local professionals for home cleanouts, landscaping, contracting, and more.</p>
+            <a href="tel:4849083149" class="btn">Call 484-908-3149</a>
+        </div>
+    </section>
+
+    <!-- Core Business Features Grid -->
+    <section id="about" id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Network?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Fully Insured Partners</h3>
+                    <p>Every single service provider we work with is thoroughly vetted, licensed, and fully insured so your property is always protected.</p>
+                </div>
+                <div class="card">
+                    <h3>Garage & Junk Removal Specialist</h3>
+                    <p>Have a cluttered garage or residential junk pile? We specialize in quick, professional cleanouts that give you your space back instantly.</p>
+                </div>
+                <div class="card">
+                    <h3>Complete Referral Network</h3>
+                    <p>Stop wasting hours calling unverified vendors. From landscaping to plumbing and general contractors, we hand-off your job to verified experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact details section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch Today</h2>
+            <p>Ready to solve your problem? Reach out directly via phone or email for immediate booking support.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Direct Call or Text</strong>
+                    <a href="tel:4849083149">484-908-3149</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email Address</strong>
+                    <a href="mailto:Rob@thatoneguysolutions.com" style="font-size: 18px;">Rob@thatoneguysolutions.com</a>
+                </div>
+                <div class="contact-item" style="margin-bottom: 0;">
+                    <strong>Official Web Domain</strong>
+                    <p style="font-size: 18px; font-weight: bold; color: var(--white);">Thatoneguysolutions.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer copyright info -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 That One Guy Solutions. All Rights Reserved. Fully Insured Network.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
